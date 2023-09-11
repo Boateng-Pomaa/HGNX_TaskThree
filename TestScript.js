@@ -1,12 +1,12 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+import axios from 'axios'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 import { userModel } from './model/userSchema.js'
 
-dotenv.config();
+dotenv.config()
 
 // Base URL of the API
-const baseUrl = 'https://userdetails-k0rw.onrender.com/'
+const baseUrl = 'https://userdetails-k0rw.onrender.com'
 
 // MongoDB configuration
 const db = process.env.DB_URL
@@ -25,7 +25,7 @@ async function fetchPersonIdByName(name) {
     return person._id
   } catch (error) {
     console.error('Error fetching person ID:', error)
-    return null;
+    return null
   }
 }
 
@@ -45,7 +45,7 @@ async function modifyPersonById(id, newData) {
   try {
     const response = await axios.put(`${baseUrl}/api/${id}`, newData)
     console.log('Modified person details:', response.data)
-    return response.data;
+    return response.data
   } catch (error) {
     console.error('Error modifying person details:', error)
   }
