@@ -32,7 +32,7 @@ export async function addUser(req, res) {
             })
         } else {
             res.status(400).json({
-                message: " unsuccessful"
+                message: " unsuccessful, Name should be string!"
             })
         }
     }

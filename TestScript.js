@@ -36,7 +36,7 @@ async function addPerson(name) {
     console.log('New person added:', response.data)
     return response.data
   } catch (error) {
-    console.error('Error adding person:', error)
+    console.error('Error adding person  , Name should be string:', error)
   }
 }
 
