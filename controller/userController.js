@@ -1,19 +1,19 @@
-import {userModel} from '../model/userSchema.js'
+import { userModel } from '../model/userSchema.js'
 
 
 
 export async function addUser(req, res) {
     try {
-        const { username, email, password } = req.body
+        const { name } = req.body
 
         // Validation
-        if (!username || !password || !email) {
+        if (!name) {
             return res.status(400).json({
                 message: 'Please include all fields'
             })
         }
         // Find if user already exists
-        const userExists = await userModel.findOne({ username })
+        const userExists = await userModel.findOne({ name })
 
         if (userExists) {
             return res.status(400).json({
@@ -23,9 +23,7 @@ export async function addUser(req, res) {
 
         // CREATING USER
         const user = await userModel.create({
-            username,
-            password,
-            email
+            name
         })
         if (user) {
             res.status(200).json({
@@ -47,35 +45,34 @@ export async function addUser(req, res) {
 
 export async function getUser(req, res) {
     try {
-        const { username } = req.params
-        const user = await userModel.findOne({ username})
+        const { user_id } = req.params
+        const user = await userModel.findOne({ _id: user_id })
         if (user) {
             res.status(200).json({
                 message: "Success",
                 user
             })
         } else {
-            return res.status(404).json({
-                message: "Not Found"
+            return res.status(400).json({
+                message: "Failed to Add person"
             })
         }
-
     } catch (error) {
         console.log(error)
         res.status(500).send('Internal Server error')
     }
 }
 
-export async function updateUser(req, res){
+export async function updateUser(req, res) {
     try {
-        const {username} = req.params
-        const {email,password} = req.body
-        const updated = await userModel.findOneAndUpdate({username},{email,password},{upsert:true})
-        if(!updated){
-            return res.status(404).json({message:"failed to update"})
+        const { user_id } = req.params
+        const { name } = req.body
+        const updated = await userModel.findOneAndUpdate({ _id: user_id }, { name })
+        if (!updated) {
+            return res.status(404).json({ message: "failed to update" })
         }
         return res.status(200).json({
-            message:"success",
+            message: "success",
             updated
         })
 
@@ -85,28 +82,29 @@ export async function updateUser(req, res){
     }
 }
 
-export async function deleteUser(req,res){
+export async function deleteUser(req, res) {
     try {
-        const {username} = req.params
-        const deleted = await userModel.findOneAndDelete({username})
-        if(!deleted){
-            return res.status(400).json({message:"failed to delete",})
+        const { user_id } = req.params
+        const deleted = await userModel.findOneAndDelete({ _id: user_id })
+        if (!deleted) {
+            return res.status(400).json({ message: "failed to delete", })
         }
-        return res.status(200).json({message:"User Deleted"
-    })
+        return res.status(200).json({
+            message: "User Deleted"
+        })
     } catch (error) {
         console.log(error)
         res.status(500).send('Internal Server error')
     }
 }
 
-export async function getAllUsers(req,res){
+export async function getAllUsers(req, res) {
     try {
         const allUsers = await userModel.find()
-        if(!allUsers){
-            return res.status(400).json({message:"failed to fetch all users"})
+        if (!allUsers) {
+            return res.status(400).json({ message: "failed to fetch all users" })
         }
-        return res.status(200).json({message:"success",allUsers})
+        return res.status(200).json({ message: "success", allUsers })
     } catch (error) {
         console.log(error)
         res.status(500).send('Internal Server error')

@@ -1,31 +1,32 @@
 @url = "http://localhost:5000"
 
 ### adding user
-POST  http://localhost:5000/addUser HTTP/1.1
+POST  http://localhost:5000/api HTTP/1.1
 Content-Type: application/json
 
 {
-    "username":"Linda pomaa",
-    "password":"12qweerty",
-    "email":"test@example.com"
+    "name":" pomaa"
 }
 
 
 #### getting user
-GET  http://localhost:5000/getUser/Linda HTTP/1.1
+GET  http://localhost:5000/api/64ff75c0b5dd336d29ebc3cf HTTP/1.1
 
 ### updating user
-PUT  http://localhost:5000/updateUser/Linda HTTP/1.1
+PUT  http://localhost:5000/api/64ff75c0b5dd336d29ebc3cf HTTP/1.1
 Content-Type: application/json
 
 {
-     "password":"13",
-    "email":"test3@example.com"
+     "name":"Pomaa"
 }
 
 ### deleting user
-DELETE http://localhost:5000/deleteUser/Linda HTTP/1.1
+DELETE http://localhost:5000/api/64ff4755260f0330c69703ce HTTP/1.1
 
 
 ### getting all users
-GET http://localhost:5000/allUsers HTTP/1.1
+GET http://localhost:5000/api HTTP/1.1
+
+
+####
+https://userdetails-k0rw.onrender.com

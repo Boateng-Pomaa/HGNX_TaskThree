@@ -4,15 +4,9 @@ import mongoose from 'mongoose'
 const {Schema,model} = mongoose
 
 const userSchema = new Schema({
-    username:{
+    name:{
         type: String,
         required: true
-    },
-    password:{
-        type:String
-    },
-    email:{
-      type: String,
     },
 },
 {
