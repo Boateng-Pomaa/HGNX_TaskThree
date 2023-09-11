@@ -1,0 +1,31 @@
+@url = "http://localhost:5000"
+
+### adding user
+POST  http://localhost:5000/addUser HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"Linda pomaa",
+    "password":"12qweerty",
+    "email":"test@example.com"
+}
+
+
+#### getting user
+GET  http://localhost:5000/getUser/Linda HTTP/1.1
+
+### updating user
+PUT  http://localhost:5000/updateUser/Linda HTTP/1.1
+Content-Type: application/json
+
+{
+     "password":"13",
+    "email":"test3@example.com"
+}
+
+### deleting user
+DELETE http://localhost:5000/deleteUser/Linda HTTP/1.1
+
+
+### getting all users
+GET http://localhost:5000/allUsers HTTP/1.1
