@@ -5,7 +5,6 @@ import { userModel } from '../model/userSchema.js'
 export async function addUser(req, res) {
     try {
         const { name } = req.body
-
         // Validation
         if (!name) {
             return res.status(400).json({
@@ -26,12 +25,12 @@ export async function addUser(req, res) {
             name
         })
         if (user) {
-            res.status(200).json({
+           return res.status(200).json({
                 message: 'Person added Successfully',
                 user,
             })
         } else {
-            res.status(400).json({
+          return  res.status(400).json({
                 message: " unsuccessful, Name should be string!"
             })
         }
@@ -45,8 +44,8 @@ export async function addUser(req, res) {
 
 export async function getUser(req, res) {
     try {
-        const { user_id } = req.params
-        const user = await userModel.findOne({ _id: user_id })
+        const { name } = req.params
+        const user = await userModel.findOne({ name})
         if (user) {
             res.status(200).json({
                 message: "Success",
@@ -54,7 +53,7 @@ export async function getUser(req, res) {
             })
         } else {
             return res.status(400).json({
-                message: "Failed to Add person"
+                message: "Failed "
             })
         }
     } catch (error) {
