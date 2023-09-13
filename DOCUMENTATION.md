@@ -1,8 +1,8 @@
 # API Documentation
+
 - [Setting up and Deploying](#setting-up-and-deploying)
   - [Installation](#installation)
 - [Usage](#usage)
-
 
 
 Setting up and Deploying
@@ -99,4 +99,3 @@ Response:
 Status: 204 No Content
 
 
-### Installation
