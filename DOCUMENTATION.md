@@ -1,7 +1,29 @@
+# API Documentation
+- [Setting up and Deploying](#setting-up-and-deploying)
+  - [Installation](#installation)
 - [Usage](#usage)
-- [Installation](#installation)
-Usage
 
+
+
+Setting up and Deploying
+To set up and deploy the API locally or on a server, follow these steps:
+
+To Set Up The server, Follow the installation procedure in the README file..
+
+Clone the repository and navigate to its directory.
+
+Install the dependencies using the command npm install.
+
+Set up the environment variables by creating a .env file in the root directory and providing the required variables.
+
+Start the API using npm start.
+
+The API will be accessible at the specified PORT in your environment variables.
+
+To deploy the API on a server, follow the deployment process specific to your server environment.
+
+
+Usage
 GET /api/users
 Retrieve a list of all users.
 
@@ -74,12 +96,7 @@ Request:
 DELETE https://userdetails-k0rw.onrender.com/api/1
 
 Response:
-
-{
-  "id": "1",
-  "name": "John Doe"
-}
+Status: 204 No Content
 
 
 ### Installation
-To Set Up The server, Follow the installation procedure in the README file.
