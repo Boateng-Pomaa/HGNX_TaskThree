@@ -25,7 +25,6 @@ Before running the API, make sure you have the following prerequisites installed
 
 1. Clone the repository:
 
-   ```bash
    git clone https://github.com/Boateng-Pomaa/HGNX_TaskThree.git
 
 2. Install the dependencies:

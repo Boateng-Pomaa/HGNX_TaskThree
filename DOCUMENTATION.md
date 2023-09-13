@@ -1,4 +1,5 @@
-
+- [Usage](#usage)
+- [Installation](#installation)
 Usage
 
 GET /api/users
@@ -80,5 +81,5 @@ Response:
 }
 
 
-
+### Installation
 To Set Up The server, Follow the installation procedure in the README file.
