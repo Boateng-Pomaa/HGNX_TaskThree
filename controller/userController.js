@@ -71,8 +71,7 @@ export async function updateUser(req, res) {
             return res.status(404).json({ message: "failed to update" })
         }
         return res.status(200).json({
-            message: "success",
-            updated
+            message: "update successful"
         })
 
     } catch (error) {

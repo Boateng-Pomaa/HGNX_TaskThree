@@ -39,7 +39,16 @@ async function addPerson(name) {
     console.error('Error adding person  , Name should be string:', error)
   }
 }
-
+///Function to perform a GET request to get user
+async function getPerson(name) {
+  try {
+    const response = await axios.get(`${baseUrl}/api/${ name }` )
+    console.log('Fetched User:', response.data)
+    return response.data
+  } catch (error) {
+    console.error('Error adding person  , Name should be string:', error)
+  }
+}
 // Function to perform a PUT request to modify the details of an existing person by ID
 async function modifyPersonById(id, newData) {
   try {
@@ -64,10 +73,12 @@ async function removePersonById(id) {
 
 async function testAPI() {
   await addPerson('John Doe')
+  await getPerson('John Doe')
 
   const userId = await fetchPersonIdByName('John Doe')
 
   await modifyPersonById(userId, { name: 'Jane Doe' })
+  await getPerson('John Doe')
   await removePersonById(userId)
 }
 
