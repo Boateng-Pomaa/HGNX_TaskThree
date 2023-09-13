@@ -1,9 +1,12 @@
+
+Usage
+
 GET /api/users
 Retrieve a list of all users.
 
 Request:
 
-GET /api
+GET https://userdetails-k0rw.onrender.com/api
 Response:
 
 [
@@ -16,11 +19,11 @@ Response:
     "name": "Jane Smith"
   }
 ]
-GET /api/:user_id
-Retrieve a user by ID.
+GET /api/:name
+Retrieve a user by name.
 
 Request:
-GET /api/1
+GET https://userdetails-k0rw.onrender.com/api/John%20Doe
 
 Response:
 
@@ -33,7 +36,7 @@ POST /api
 Create a new user.
 
 Request:
-POST /api
+POST https://userdetails-k0rw.onrender.com/api
 Content-Type: application/json
 
 {
@@ -51,7 +54,7 @@ Update a user by ID.
 
 Request:
 
-PUT /api/1
+PUT https://userdetails-k0rw.onrender.com/api/1
 Content-Type: application/json
 
 {
@@ -67,7 +70,7 @@ DELETE /api/:user_:id
 Delete a user by ID.
 
 Request:
-DELETE /api/1
+DELETE https://userdetails-k0rw.onrender.com/api/1
 
 Response:
 

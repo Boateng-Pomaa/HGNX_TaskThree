@@ -57,3 +57,9 @@ POST /api      ->        Add a new user.
 PUT /api/:users_id  ->  Update a user by ID.
 DELETE /api/:users_id -> Delete a user by ID.
 
+The Base URL of the above endpoints -> https://userdetails-k0rw.onrender.com
+
+
+UML DIAGRAM OF THE  API CLASSES AND MODEL
+
+![Alt text](image.png)
