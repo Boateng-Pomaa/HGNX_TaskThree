@@ -46,7 +46,7 @@ async function getPerson(name) {
     console.log('Fetched User:', response.data)
     return response.data
   } catch (error) {
-    console.error('Error adding person  , Name should be string:', error)
+    console.error('Error Fetching  , Name should be string:', error)
   }
 }
 // Function to perform a PUT request to modify the details of an existing person by ID
@@ -78,7 +78,7 @@ async function testAPI() {
   const userId = await fetchPersonIdByName('John Doe')
 
   await modifyPersonById(userId, { name: 'Jane Doe' })
-  await getPerson('John Doe')
+  await getPerson('Jane Doe')
   await removePersonById(userId)
 }
 
